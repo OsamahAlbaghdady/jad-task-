@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      body {
+        width: 100%;
+        height: fit-content;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; */
+      }
+
+      .main-container {
+        width: 96%;
+        height: fit-content;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .header-image-container {
+        width: 20%;
+        height: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+        padding-bottom: 20%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header-image-container img {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .header-info {
+        width: 75%;
+        display: flex;
+        justify-content: end;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        padding: 1%;
+        border-radius: 0.5rem;
+        text-align: end;
+        font-size: 3vw;
+        font-weight: bolder;
+      }
+
+      .body {
+        margin-top: 1em;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .body img {
+        width: 25%;
+      }
+      .body-contact {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .body-mobile-contact {
+        width: 100%;
+        display: flex;
+        height: 30%;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .body-mobile-contact span {
+        width: 45%;
+        padding: 2%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 0.4rem;
+      }
+      .body-mobile-contact span h2 {
+        font-size: 2.5vw;
+        font-weight: 800;
+      }
+      .body-location-container {
+        width: 96%;
+        padding: 2%;
+        height: 100%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        border-radius: 0.4rem;
+        margin-top: 20px;
+      }
+      .body-location-container span {
+        margin-right: 10px;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-evenly;
+      }
+      .body-location-container span h2 {
+        font-size: 3vw;
+        font-weight: 800;
+      }
+      .body-location-container li {
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .body-location-container li svg {
+        width: 90% !important;
+      }
+      .contact-list {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .contact-list a {
+        width: fit-content;
+        padding: 1% 2%;
+        border-radius: 2px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        display: flex;
+        align-items: center;
+        background-color: #f3f3f3;
+      }
+      .contact-list a h3 {
+        font-size: 2.5vw;
+        margin-right: 5%;
+        color: #0a223a;
+      }
+      .contact-list a li {
+        display: flex;
+        align-items: center;
+      }
+      .contact-list a li svg {
+        width: 2vw!important;
+        margin-bottom: -0.2vw;
+        fill: #0a223a!important;
+      }
+
+      .footer {
+        margin-top: 20px;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-image-container {
+        width: 12%;
+        height: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+        padding-bottom: 12%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-image-container img {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .footer-info {
+        width: 85%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        padding: 1%;
+        border-radius: 0.5rem;
+        background-color: #0a223a;
+      }
+      .footer-info span{
+        width: fit-content;
+        display: flex;
+        height: 100%;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: end;
+      }
+      .footer-info span h2{
+        font-size: 2.5vw;
+        font-weight: bolder;
+        color: white;
+      }
+      .footer-info span p{
+        font-size: 2.1vw;
+        font-weight: 900;
+        opacity: .8;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div class="header">
+        <span class="header-info"
+          >Lorem ipsum, dolor expedita fuga aliquam quae ipsum porro, natus
+          suscipit?</span
+        >
+        <div class="header-image-container">
+          <img
+            src="https://i.ibb.co/SQb1Sgb/newLogo.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="body">
+        <img
+          src="https://www.investopedia.com/thmb/hJrIBjjMBGfx0oa_bHAgZ9AWyn0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/qr-code-bc94057f452f4806af70fd34540f72ad.png"
+          alt=""
+        />
+        <div class="body-contact">
+          <div class="body-mobile-contact">
+            <span>
+              <h2>7713714113</h2>
+              <li id="whatsapp"></li>
+            </span>
+            <span>
+              <h2>7713714113</h2>
+              <li id="mobile"></li>
+            </span>
+          </div>
+          <div class="body-location-container">
+            <span>
+              <h2>any any any</h2>
+              <h2>any any any</h2>
+            </span>
+            <li id="marker"></li>
+          </div>
+        </div>
+      </div>
+      <ul class="contact-list">
+        <a
+          ><h3>any</h3>
+          <li id="whatsapp"></li
+        ></a>
+        <a
+          ><h3>any</h3>
+          <li id="whatsapp"></li
+        ></a>
+        <a
+          ><h3>any</h3>
+          <li id="whatsapp"></li
+        ></a>
+        <a
+          ><h3>any</h3>
+          <li id="whatsapp"></li
+        ></a>
+        <a
+          ><h3>any</h3>
+          <li id="whatsapp"></li
+        ></a>
+      </ul>
+      <div class="footer">
+        <div class="footer-info">
+          <span>
+            <h2>بيتي | Baity</h2>
+            <p>للتسويق العقاري</p>
+          </span>
+          <span style="align-items: start;">
+            <h2>www.iBaity.com</h2>
+            <h2>اكبر تطبيق للعقارات في العراق</h2>
+          </span>
+        </div>
+        <div class="footer-image-container">
+          <img
+            src="https://i.ibb.co/SQb1Sgb/newLogo.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const mobile = document.getElementById("mobile");
+    const whatsapp = document.querySelectorAll("#whatsapp");
+    const marker = document.getElementById("marker");
+
+    mobile.innerHTML = `<svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="Layer_1"
+    data-name="Layer 1"
+    viewBox="0 0 24 24"
+    width="4vw"
+    >
+    <path
+      d="M24,6.24c0,7.64-10.13,17.76-17.76,17.76-1.67,0-3.23-.63-4.38-1.78l-1-1.15c-1.16-1.16-1.16-3.12,.05-4.33,.03-.03,2.44-1.88,2.44-1.88,1.2-1.14,3.09-1.14,4.28,0l1.46,1.17c3.2-1.36,5.47-3.64,6.93-6.95l-1.16-1.46c-1.15-1.19-1.15-3.09,0-4.28,0,0,1.85-2.41,1.88-2.44,1.21-1.21,3.17-1.21,4.38,0l1.05,.91c1.2,1.19,1.83,2.75,1.83,4.42Z"
+    /></svg
+    >`;
+    for (let index = 0; index < whatsapp.length; index++) {
+      const element = whatsapp[index];
+      element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                id="Capa_1"
+                x="0px"
+                y="0px"
+                viewBox="0 0 24 24"
+                style="enable-background: new 0 0 24 24"
+                xml:space="preserve"
+                width="4vw"
+              >
+                <g id="WA_Logo">
+                  <g>
+                    <path
+                      style="fill-rule: evenodd; clip-rule: evenodd"
+                      d="M20.463,3.488C18.217,1.24,15.231,0.001,12.05,0    C5.495,0,0.16,5.334,0.157,11.892c-0.001,2.096,0.547,4.142,1.588,5.946L0.057,24l6.304-1.654    c1.737,0.948,3.693,1.447,5.683,1.448h0.005c6.554,0,11.89-5.335,11.893-11.893C23.944,8.724,22.708,5.735,20.463,3.488z     M12.05,21.785h-0.004c-1.774,0-3.513-0.477-5.031-1.378l-0.361-0.214l-3.741,0.981l0.999-3.648l-0.235-0.374    c-0.99-1.574-1.512-3.393-1.511-5.26c0.002-5.45,4.437-9.884,9.889-9.884c2.64,0,5.122,1.03,6.988,2.898    c1.866,1.869,2.893,4.352,2.892,6.993C21.932,17.351,17.498,21.785,12.05,21.785z M17.472,14.382    c-0.297-0.149-1.758-0.868-2.031-0.967c-0.272-0.099-0.47-0.149-0.669,0.148s-0.767,0.967-0.941,1.166    c-0.173,0.198-0.347,0.223-0.644,0.074c-0.297-0.149-1.255-0.462-2.39-1.475c-0.883-0.788-1.48-1.761-1.653-2.059    s-0.018-0.458,0.13-0.606c0.134-0.133,0.297-0.347,0.446-0.521C9.87,9.97,9.919,9.846,10.019,9.647    c0.099-0.198,0.05-0.372-0.025-0.521C9.919,8.978,9.325,7.515,9.078,6.92c-0.241-0.58-0.486-0.501-0.669-0.51    C8.236,6.401,8.038,6.4,7.839,6.4c-0.198,0-0.52,0.074-0.792,0.372c-0.272,0.298-1.04,1.017-1.04,2.479    c0,1.463,1.065,2.876,1.213,3.074c0.148,0.198,2.095,3.2,5.076,4.487c0.709,0.306,1.263,0.489,1.694,0.626    c0.712,0.226,1.36,0.194,1.872,0.118c0.571-0.085,1.758-0.719,2.006-1.413c0.248-0.694,0.248-1.29,0.173-1.413    C17.967,14.605,17.769,14.531,17.472,14.382z"
+                    />
+                  </g>
+                </g></svg
+            >`;
+    }
+
+    marker.innerHTML = `  <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      version="1.1"
+      id="Capa_1"
+      x="0px"
+      y="0px"
+      viewBox="0 0 512 512"
+      xml:space="preserve"
+      width="4vw"
+    >
+      <g id="_01_align_center">
+        <path
+          d="M255.104,512.171l-14.871-12.747C219.732,482.258,40.725,327.661,40.725,214.577c0-118.398,95.981-214.379,214.379-214.379   s214.379,95.981,214.379,214.379c0,113.085-179.007,267.682-199.423,284.932L255.104,512.171z M255.104,46.553   c-92.753,0.105-167.918,75.27-168.023,168.023c0,71.042,110.132,184.53,168.023,236.473   c57.892-51.964,168.023-165.517,168.023-236.473C423.022,121.823,347.858,46.659,255.104,46.553z"
+        />
+        <path
+          d="M255.104,299.555c-46.932,0-84.978-38.046-84.978-84.978s38.046-84.978,84.978-84.978s84.978,38.046,84.978,84.978   S302.037,299.555,255.104,299.555z M255.104,172.087c-23.466,0-42.489,19.023-42.489,42.489s19.023,42.489,42.489,42.489   s42.489-19.023,42.489-42.489S278.571,172.087,255.104,172.087z"
+        />
+      </g>
+    </svg>`;
+  </script>
+  <script src="ejs.js"></script>
+
+</html>
